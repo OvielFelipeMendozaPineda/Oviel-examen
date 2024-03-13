@@ -21,6 +21,7 @@
 }
 .content-img{
     display: flex;
+    justify-content: space-around;
 }
 .img-group:hover {
     background: rgb(135, 135, 135);

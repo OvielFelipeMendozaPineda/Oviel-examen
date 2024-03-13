@@ -47,7 +47,7 @@ export class Diseño extends HTMLElement {
                     valor : diseño
                 }
                 console.log(data);
-                // await postData(data)
+                await postData(data)
                 const mainView = document.querySelector('.main-view')
                 mainView.innerHTML = '<monetizar-app></monetizar-app>'
             })

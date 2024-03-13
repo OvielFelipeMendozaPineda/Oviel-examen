@@ -4,16 +4,9 @@ const myHeader = new Headers ({
 })
 
 async function getData() {
-    
-    try {
-        const response = await fetch(URL_API, {
-            "method" : "GET",
-            "headers" : myHeader,
-            "data" : null
-        })
-    } catch (error) {
-        console.log(error);
-    }
+    fetch(URL_API)
+    .then(response => response.json())
+    .then(data => data)
 };
 
 
@@ -55,14 +48,7 @@ async function putData(data, id) {
         console.log(error);
     }
 };
-let data = 
 
-    {
-        "id": "precio calidad",
-        "valor": 200000
-      }
-  
 
-// delData(data, "precio calidad")
 
 export {getData, postData, delData, putData}

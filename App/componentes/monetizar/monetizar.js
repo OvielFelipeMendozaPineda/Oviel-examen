@@ -47,7 +47,7 @@ export class Monetizar extends HTMLElement {
                     valor : monetizar
                 }
                 console.log(data);
-                // await postData(data)
+                await postData(data)
                 const mainView = document.querySelector('.main-view')
                 mainView.innerHTML = '<autenticacion-app></autenticacion-app>'
             })

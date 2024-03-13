@@ -4,6 +4,8 @@ import '/App/componentes/tipoApp/tipoApp.js'
 import '/App/componentes/diseño/diseño.js'
 import '/App/componentes/monetizar/monetizar.js'
 import '/App/componentes/auth/auth.js'
+import '/App/componentes/resumen/resumen.js'
+import '/App/componentes/formulario/formulario.js'
 
 
 

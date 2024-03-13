@@ -36,6 +36,7 @@ export class tipoApp extends HTMLElement {
         this.sendPrice()
     }
     sendPrice() {
+        console.log();
         let tipoApp;
         const opciones = document.querySelectorAll(".img-group")
         opciones.forEach(option => {
@@ -47,7 +48,7 @@ export class tipoApp extends HTMLElement {
                     valor : tipoApp
                 }
                 console.log(data);
-                // await postData(data)
+                await postData(data)
                 const mainView = document.querySelector('.main-view')
                 mainView.innerHTML = '<diseño-app></diseño-app>'
             })

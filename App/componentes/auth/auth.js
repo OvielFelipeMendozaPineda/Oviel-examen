@@ -49,7 +49,7 @@ export class Autenticacion extends HTMLElement {
                 console.log(data);
                 // await postData(data)
                 const mainView = document.querySelector('.main-view')
-                mainView.innerHTML = '<resumen-app></diseño-app>'
+                mainView.innerHTML = '<resumen-app></resumen-app>'
             })
         })
     }

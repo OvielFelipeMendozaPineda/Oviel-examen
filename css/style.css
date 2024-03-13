@@ -35,6 +35,14 @@
     display: flex;
     width: clamp(10rem, 90vw, 80rem);
 }
+.text-content{
+    text-align: center;
+}
+.social-links{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around   ;
+}
 .img-group:hover {
     background: rgb(135, 135, 135);
 
