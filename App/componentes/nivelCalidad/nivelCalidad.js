@@ -42,7 +42,10 @@ export class NivelCalidad extends HTMLElement {
                     id : "precio calidad",
                     valor : precioCalidad
                 }
-                await postData(data)
+                console.log(data);
+                // await postData(data)
+                const mainView = document.querySelector('.main-view')
+                mainView.innerHTML = '<tipo-app></tipo-app>'
             })
         })
     }
