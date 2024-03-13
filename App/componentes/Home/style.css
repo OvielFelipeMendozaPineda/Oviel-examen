@@ -1,0 +1,18 @@
+.main-content{
+    background: rgb(49, 49, 49);
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-column: auto;
+    grid-template-rows: repeat(auto-fill, minmax(33%, 1fr));
+    place-content: center;
+    place-items: center ;
+}
+
+.main-content .content-img img{
+    width: 100%;
+    height: 100%;
+}
+.main-content .content-img {
+    width: clamp(7rem, 50vw, 25rem);
+}
