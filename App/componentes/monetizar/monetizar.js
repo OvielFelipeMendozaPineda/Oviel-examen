@@ -49,7 +49,7 @@ export class Monetizar extends HTMLElement {
                 console.log(data);
                 // await postData(data)
                 const mainView = document.querySelector('.main-view')
-                mainView.innerHTML = '<diseño-app></diseño-app>'
+                mainView.innerHTML = '<autenticacion-app></autenticacion-app>'
             })
         })
     }
