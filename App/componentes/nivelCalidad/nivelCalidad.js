@@ -1,3 +1,4 @@
+import {getData, postData, delData, putData} from '/api/db.js'
 export class NivelCalidad extends HTMLElement {
     constructor() {
         super()
@@ -13,21 +14,37 @@ export class NivelCalidad extends HTMLElement {
                 <h2 id="main-text">¿Qué nivel de calidad estás buscando?</h2>
             </div>
             <div class="content-img">
-                <div class="img-group">
-                    <img src="storage/RecursosExamen/home-icon.png" alt="No disp.">
-                    <p>Calidad optima</p>
+                <div class="img-group" id="option-1">
+                    <img src="storage/RecursosExamen/answer-1-1.png" alt="No disp." id="option-1">
+                    <p id="option-1" >Calidad optima</p>
                 </div>
-                <div class="img-group">
-                    <img src="storage/RecursosExamen/home-icon.png" alt="No disp.">
-                    <p>Buena relacion calidad/precio</p>
+                <div class="img-group" id="option-2">
+                    <img src="storage/RecursosExamen/answer-1-2.png" alt="No disp." id="option-2">
+                    <p id="option-2">Buena relacion calidad/precio</p>
                 </div>
-                <div class="img-group">
-                    <img src="storage/RecursosExamen/home-icon.png" alt="No disp.">
-                    <p>No me importa tanto la calidad</p>
+                <div class="img-group" id="option-3">
+                    <img src="storage/RecursosExamen/answer-1-3.png" alt="No disp." id="option-3">
+                    <p id="option-3">No me importa tanto la calidad</p>
                 </div>
             </div>
         </section>
         `
+        this.sendPrice()
+    }
+    sendPrice() {
+        let precioCalidad;
+        const opciones = document.querySelectorAll(".img-group")
+        opciones.forEach(option => {
+            option.addEventListener('click', async (e) => {
+                let targetInput = e.target.id
+                targetInput == 'option-1'? precioCalidad = 300000 : targetInput == 'option-2'? precioCalidad = 380000 : targetInput == 'option-3'? precioCalidad = 200000 : console.log("");
+                let data = {
+                    id : "precio calidad",
+                    valor : precioCalidad
+                }
+                await postData(data)
+            })
+        })
     }
 }
 

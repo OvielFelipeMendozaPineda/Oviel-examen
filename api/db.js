@@ -1,9 +1,9 @@
-URL_API = "http://154.38.171.54:3002/priceA"
+let URL_API = "http://154.38.171.54:3002/priceA"
 const myHeader = new Headers ({
     "Content-type" : "apliccation/json"
 })
 
-export async function getData() {
+async function getData() {
     
     try {
         const response = await fetch(URL_API, {
@@ -16,11 +16,8 @@ export async function getData() {
     }
 };
 
-let data = {
-    id : "1",
-    name: "o"
-}
-export async function postData(data) {
+
+async function postData(data) {
     
     try {
         const response = await fetch(URL_API, {
@@ -33,7 +30,7 @@ export async function postData(data) {
     }
 };
 
-export async function delData(data, id) {
+async function delData(data, id) {
     
     try {
         const response = await fetch(`${URL_API}/${id}`, {
@@ -46,7 +43,7 @@ export async function delData(data, id) {
     }
 };
 
-export async function putData(data, id) {
+async function putData(data, id) {
     
     try {
         const response = await fetch(`${URL_API}/${id}`, {
@@ -58,8 +55,14 @@ export async function putData(data, id) {
         console.log(error);
     }
 };
+let data = 
 
+    {
+        "id": "precio calidad",
+        "valor": 200000
+      }
+  
 
-export {
-    getData, postData, delData, putData
-}
+// delData(data, "precio calidad")
+
+export {getData, postData, delData, putData}
