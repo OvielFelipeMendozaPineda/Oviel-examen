@@ -2,6 +2,8 @@ import '/App/componentes/Home/home.js'
 import '/App/componentes/nivelCalidad/nivelCalidad.js'
 import '/App/componentes/tipoApp/tipoApp.js'
 import '/App/componentes/diseño/diseño.js'
+import '/App/componentes/monetizar/monetizar.js'
+
 
 
 

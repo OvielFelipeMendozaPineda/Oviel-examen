@@ -11,7 +11,7 @@ export class Diseño extends HTMLElement {
         </style>
             <section class="main-content">
             <div class="text-content">
-                <h2 id="main-text">¿Qué tipo de app necesitas?</h2>
+                <h2 id="main-text">¿Qué diseño necesita tu app.?</h2>
             </div>
             <div class="content-img">
                 <div class="img-group" id="option-1">
@@ -48,6 +48,8 @@ export class Diseño extends HTMLElement {
                 }
                 console.log(data);
                 // await postData(data)
+                const mainView = document.querySelector('.main-view')
+                mainView.innerHTML = '<monetizar-app></monetizar-app>'
             })
         })
     }
