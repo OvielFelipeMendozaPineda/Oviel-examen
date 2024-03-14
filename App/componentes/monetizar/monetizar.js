@@ -1,4 +1,5 @@
 import {getData, postData, delData, putData} from '/api/db.js'
+import {preciosLocal} from '/js/app.js'
 export class Monetizar extends HTMLElement {
     constructor() {
         super()
@@ -46,8 +47,9 @@ export class Monetizar extends HTMLElement {
                     id : "Monetizar",
                     valor : monetizar
                 }
+                preciosLocal.push(monetizar)
                 console.log(data);
-                await postData(data)
+                // await postData(data)
                 const mainView = document.querySelector('.main-view')
                 mainView.innerHTML = '<autenticacion-app></autenticacion-app>'
             })

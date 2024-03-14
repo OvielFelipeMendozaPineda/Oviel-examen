@@ -48,7 +48,7 @@ export class tipoApp extends HTMLElement {
                     valor : tipoApp
                 }
                 console.log(data);
-                await postData(data)
+                // await postData(data)
                 const mainView = document.querySelector('.main-view')
                 mainView.innerHTML = '<diseño-app></diseño-app>'
             })

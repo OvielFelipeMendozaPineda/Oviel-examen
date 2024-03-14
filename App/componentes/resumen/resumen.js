@@ -1,11 +1,13 @@
 import {getData, postData, delData, putData} from '/api/db.js'
+import {preciosLocal, totales} from '/js/app.js'
 export class Resumen extends HTMLElement {
     constructor() {
+        
         super()
         this.render()
     }
-    render() {
-        getData()
+    async render() {
+        
         this.innerHTML = /* HTML */ `
         <style>
         @import url('/App/componentes/resumen/style.css');
@@ -20,7 +22,8 @@ export class Resumen extends HTMLElement {
                      <div class="links">Links</div>
                      <div class="links">Links</div>
                  </div>
-                 <h2>El costo estimado de tu app es</h2>
+                 <h2 id="costo">El costo estimado de tu app es</h2>
+                 
              </div>
              <div class="total-price">
              </div>
@@ -32,9 +35,35 @@ export class Resumen extends HTMLElement {
                      <p>En GBP contamos con los mejores <b>desarrolladores de apps y webs para tu proyecto. Publica tu proyecto en GBP.</b></p>
                  </div>
              </div>
+             <button type="submit" class="btn">Terminar!</button>
              </section>
-             <formulario-app></formulario-app>
+             
         `
+        this.getPrice(totales, preciosLocal)
+    }
+    async getPrice(totales, preciosLocal) {
+        totales.valor = preciosLocal.reduce((a, b) => a + b, 0);
+
+        console.log(totales);
+        // const data = await getData()
+        // const precios = data.map(item => item.valor)
+        const cost = document.querySelector('#costo')
+        let totalHTML = document.createElement('h2')
+        totalHTML.innerText = totales.valor
+        // let datos = {
+        //     id: "precioTotal",
+        //     valor: total
+        // }
+
+        
+        // await postData(datos)
+        cost.appendChild(totalHTML)
+        const mainView = document.querySelector('.main-view')
+        const startButton = document.querySelector('.btn')
+        startButton.addEventListener('click', (e) => {
+        mainView.innerHTML = '<formulario-app></formulario-app>'
+
+})
     }
 }
 

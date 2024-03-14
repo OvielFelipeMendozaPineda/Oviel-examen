@@ -1,4 +1,5 @@
 import {getData, postData, delData, putData} from '/api/db.js'
+import {preciosLocal} from '/js/app.js'
 export class NivelCalidad extends HTMLElement {
     constructor() {
         super()
@@ -32,7 +33,6 @@ export class NivelCalidad extends HTMLElement {
         this.sendPrice()
     }
     sendPrice() {
-        let arrayLocal = []
         let precioCalidad;
         const opciones = document.querySelectorAll(".img-group")
         opciones.forEach(option => {
@@ -43,14 +43,14 @@ export class NivelCalidad extends HTMLElement {
                     id : "precio calidad",
                     valor : precioCalidad
                 }
-                arrayLocal.push(precioCalidad)
+                preciosLocal.push(precioCalidad)
                 console.log(data);
-                await postData(data)
+                // await postData(data)
                 const mainView = document.querySelector('.main-view')
                 mainView.innerHTML = '<tipo-app></tipo-app>'
             })
         })
-        return arrayLocal
+
     }
 }
 

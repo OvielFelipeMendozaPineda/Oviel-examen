@@ -7,8 +7,8 @@ import '/App/componentes/auth/auth.js'
 import '/App/componentes/resumen/resumen.js'
 import '/App/componentes/formulario/formulario.js'
 
-
-
+let preciosLocal = []
+var totales = {valor: 0}
 
 const startButton = document.querySelector('#start')
 const mainView = document.querySelector('.main-view')
@@ -17,3 +17,4 @@ startButton.addEventListener('click', (e) => {
 
 })
 
+export {preciosLocal, totales}

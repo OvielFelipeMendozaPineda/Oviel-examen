@@ -1,4 +1,5 @@
 import {getData, postData, delData, putData} from '/api/db.js'
+import {preciosLocal} from '/js/app.js'
 export class Autenticacion extends HTMLElement {
     constructor() {
         super()
@@ -36,6 +37,7 @@ export class Autenticacion extends HTMLElement {
         this.sendPrice()
     }
     sendPrice() {
+        console.log(preciosLocal);
         let autenticacion;
         const opciones = document.querySelectorAll(".img-group")
         opciones.forEach(option => {
@@ -46,6 +48,7 @@ export class Autenticacion extends HTMLElement {
                     id : "autenticacion",
                     valor : autenticacion
                 }
+                preciosLocal.push(autenticacion)
                 console.log(data);
                 // await postData(data)
                 const mainView = document.querySelector('.main-view')
